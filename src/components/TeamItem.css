@@ -3,7 +3,14 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    text-align: center;
-    max-width: max-content;
-    border: 3px solid black;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 0;
+}
+
+div {
+    margin-top: 30px;
 }

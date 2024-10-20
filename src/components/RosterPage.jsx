@@ -1,23 +1,24 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import "./RosterPage.css";
 
 function RosterPage() {
   const location = useLocation();
-
+  const teamRoster = location.state.roster.data;
   return (
     <div className="Roster">
       <header className="header">
-        {location.roster.map((player, index) => {
+        {teamRoster.map((player, index) => {
           return (
             <div key={index} id="roster-item">
-              <h1>
+              <p>
                 First Name: {player.first_name}, Last Name: {player.last_name}
-              </h1>
-              <h2>Position: {player.position}</h2>
-              <h3>
+              </p>
+              <p>Position: {player.position}</p>
+              <p>
                 Height: {player.height}, Weight: {player.weight}
-              </h3>
-              <h4>Jersey #: {player.jersey_number}</h4>
+              </p>
+              <p>Jersey #: {player.jersey_number}</p>
             </div>
           );
         })}
