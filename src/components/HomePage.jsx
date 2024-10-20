@@ -16,11 +16,17 @@ function HomePage() {
         <img
           alt="nba-icon"
           src="https://wallpaperaccess.com/full/1305374.jpg"
-          width={300}
+          width={350}
           height={250}
         ></img>
         <button id="choose-button" onClick={displayChooseTeamPage}>
           Choose NBA Team
+        </button>
+        <button
+          id="about-button"
+          onClick={() => navigate("/about", { replace: true })}
+        >
+          About
         </button>
       </header>
     </div>

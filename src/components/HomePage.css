@@ -25,3 +25,8 @@
     width: 175px;
     font-weight: bold;
   }
+
+  #about-button {
+    margin-top: 10px;
+    background-color: red;
+  }
