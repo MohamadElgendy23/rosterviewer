@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const teamRosterAPI = "https://api.balldontlie.io/v1/players/?team_ids[]=";
@@ -8,30 +7,29 @@ function TeamItem({ id, name, abbreviation }) {
   const [teamRoster, setTeamRoster] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    async function getData() {
-      const api = teamRosterAPI + id;
-      axios.get(api).then((response) => {
-        response
-          .json()
+  async function getData() {
+    const api = teamRosterAPI + id;
+    axios
+      .get(api, {
+        headers: { Authorization: "40829abe-4376-4b1c-b7f2-f1b7b66988d8" },
+      })
+      .then((response) => {
+        response.data
           .then((data) => {
-            if (data && data.length > 0) {
-              console.log(data);
-              setTeamRoster(data);
-            }
+            setTeamRoster(data);
           })
           .catch((error) => console.error(error));
       });
-    }
-    getData();
-  }, []);
+  }
+
   function displayTeamRoster() {
+    getData();
     navigate("/roster", { replace: true, state: { roster: teamRoster } });
   }
   return (
     <div className="team-item" onClick={displayTeamRoster}>
-      <h1>Player Name: {name}</h1>
-      <h2>Abbreviation: {abbreviation}</h2>
+      <p>Team Name: {name}</p>
+      <p>Abbreviation: {abbreviation}</p>
     </div>
   );
 }

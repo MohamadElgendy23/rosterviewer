@@ -1,5 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { replace, useNavigate } from "react-router-dom";
+import "./HomePage.css";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -11,12 +12,12 @@ function HomePage() {
   return (
     <div className="Home">
       <header className="header">
-        <h1>Roster Viewer</h1>
+        <h1>Roster Viewer Application</h1>
         <img
           alt="nba-icon"
           src="https://wallpaperaccess.com/full/1305374.jpg"
-          width={100}
-          height={100}
+          width={300}
+          height={250}
         ></img>
         <button id="choose-button" onClick={displayChooseTeamPage}>
           Choose NBA Team

@@ -11,4 +11,17 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+    gap: 30px;
+  }
+
+  h1 {
+    margin: 0;
+    margin-bottom: 30px
+  }
+
+  button {
+    border-radius: 10px;
+    background-color: lightseagreen;
+    width: 175px;
+    font-weight: bold;
   }
