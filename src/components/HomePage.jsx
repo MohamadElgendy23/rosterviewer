@@ -1,5 +1,5 @@
 import React from "react";
-import { replace, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 
 function HomePage() {
