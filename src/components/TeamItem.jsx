@@ -17,7 +17,7 @@ function TeamItem({ id, name, abbreviation }) {
 
   async function displayTeamRoster() {
     const teamRoster = await getData();
-    navigate("/roster", { replace: true, state: { roster: teamRoster } });
+    navigate("/roster", { replace: true });
   }
   return (
     <div className="team-item" onClick={displayTeamRoster}>

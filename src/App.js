@@ -4,10 +4,12 @@ import HomePage from "./components/HomePage";
 import ChooseNBATeamPage from "./components/ChooseNBATeamPage";
 import RosterPage from "./components/RosterPage";
 import AboutPage from "./components/AboutPage";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <BrowserRouter>
+      <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/choose" element={<ChooseNBATeamPage />} />
