@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/choose" element={<ChooseNBATeamPage />} />
-        <Route path="/roster" element={<RosterPage />} />
+        <Route path="/roster/:teamID" element={<RosterPage />} />
         <Route path="/about" element={<AboutPage />} />
       </Routes>
     </BrowserRouter>

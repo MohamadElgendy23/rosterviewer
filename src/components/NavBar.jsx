@@ -12,7 +12,7 @@ function NavBar() {
         <Link to="/choose">Choose</Link>
       </li>
       <li>
-        <Link to="/roster">Roster</Link>
+        <Link to="/roster:teamID">Roster</Link>
       </li>
       <li>
         <Link to="/about">About</Link>
