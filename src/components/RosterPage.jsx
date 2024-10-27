@@ -5,8 +5,6 @@ import "./RosterPage.css";
 
 const teamRosterAPI = "https://api.balldontlie.io/v1/players/?team_ids[]=";
 function RosterPage() {
-  //const location = useLocation();
-  //const teamRoster = location.state.roster.data;
   const [roster, setRoster] = useState([]);
   const { teamID } = useParams();
 
@@ -22,10 +20,6 @@ function RosterPage() {
     getData();
   }, []);
 
-  // async function displayTeamRoster() {
-  //   const teamRoster = await getData();
-  //   //navigate("/roster", { replace: true, state: { roster: teamRoster } });
-  // }
   return (
     <div className="Roster">
       <header className="header">
