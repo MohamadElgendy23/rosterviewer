@@ -14,6 +14,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/choose" element={<ChooseNBATeamPage />} />
         <Route path="/roster/:teamID" element={<RosterPage />} />
+        <Route path="/myTeam" element={<MyTeamPage />} />
         <Route path="/about" element={<AboutPage />} />
       </Routes>
     </BrowserRouter>
