@@ -1,15 +1,16 @@
 .nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .nav li {
-    list-style: none;
+  list-style: none;
 }
 
 .nav a {
-    text-decoration: none;
-    font-size: larger;
+  text-decoration: none;
+  font-size: larger;
+  color: darkblue;
 }

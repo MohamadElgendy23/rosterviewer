@@ -1,10 +1,13 @@
-import React from "react";
 import "./MyTeamPage.css";
 
 function MyTeamPage() {
-  return <div>
-    
-  </div>;
+  return (
+    <div className="Team">
+      <header className="header">
+        
+      </header>
+    </div>
+  );
 }
 
 export default MyTeamPage;

@@ -15,7 +15,7 @@ function NavBar() {
         <Link to="/roster:teamID">Roster</Link>
       </li>
       <li>
-        <Link to="myTeam">My Team</Link>
+        <Link to="/myTeam">My Team</Link>
       </li>
       <li>
         <Link to="/about">About</Link>

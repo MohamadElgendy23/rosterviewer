@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./RosterPage.css";
 
 const teamRosterAPI = "https://api.balldontlie.io/v1/players/?team_ids[]=";
@@ -20,6 +20,10 @@ function RosterPage() {
     getData();
   }, []);
 
+  function favoritePlayer() {
+    
+  }
+
   return (
     <div className="Roster">
       <header className="header">
@@ -27,7 +31,8 @@ function RosterPage() {
           {roster &&
             roster.map((player, index) => {
               return (
-                <div key={index} class="roster-item">
+                <div key={index} className="roster-item">
+                  <i className="fa-solid fa-star" onClick={favoritePlayer}></i>
                   <p>
                     First Name: {player.first_name}, Last Name:{" "}
                     {player.last_name}
