@@ -1,0 +1,49 @@
+.header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  gap: 30px;
+}
+
+h2 {
+  margin-bottom: 0px;
+}
+
+.login-form,
+.register-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 20px;
+}
+
+.login-form input {
+  font-size: 20px;
+}
+
+.login-form button {
+  font-size: 15px;
+}
+
+.signup-button {
+  width: 80px;
+}
+
+.register-form input {
+  font-size: 20px;
+}
+
+.register-form button {
+  font-size: 15px;
+}
+
+.login-button {
+  width: 80px;
+}
