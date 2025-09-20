@@ -10,6 +10,20 @@
   gap: 30px;
 }
 
+.favorites-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #065f06, #0db70d);
+  padding: 2rem;
+  gap: 2rem;
+  text-align: center;
+  font-family: "Arial Black", sans-serif;
+  color: #fff;
+}
+
 .favorite-item {
   display: flex;
   align-items: center;
