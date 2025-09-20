@@ -13,7 +13,7 @@ export async function checkAuth() {
     if (!res.ok) return false;
 
     const data = await res.json();
-    return data.valid; // backend should return { valid: true/false }
+    return data.valid;
   } catch (err) {
     console.error("Auth check failed:", err);
     return false;

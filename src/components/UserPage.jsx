@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 import "./UserPage.css";
 
 const userAPI = "http://localhost:3000/user";
@@ -10,6 +11,7 @@ function UserPage() {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [registerConfirmPassword, setRegisterConfirmPassword] = useState("");
+  const { setIsAuthenticated } = useContext(AuthContext);
 
   const navigate = useNavigate();
   async function handleLogin(e) {
@@ -30,6 +32,7 @@ function UserPage() {
         return;
       }
       localStorage.setItem("token", data.token);
+      setIsAuthenticated(true);
       navigate("/home");
     } catch (err) {
       console.error("Login error:", err);
@@ -56,7 +59,7 @@ function UserPage() {
         }),
       });
 
-      const data = await res.json();
+      await res.json();
 
       if (!res.ok) {
         return;

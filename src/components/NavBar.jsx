@@ -1,34 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { checkAuth } from "../utils/auth";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 import "./NavBar.css";
 
 function NavBar() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    async function verify() {
-      const auth = await checkAuth();
-      setIsAuthenticated(auth);
-    }
-    verify();
-  }, []);
+  const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     setIsAuthenticated(false);
-    navigate("/login");
   };
   return (
     <div className="nav">
       {!isAuthenticated ? (
         <li>
-          <Link to="/user">Login</Link>
+          <Link to="/">Login</Link>
         </li>
       ) : (
         <li>
-          <button onClick={handleLogout}>Logout</button>
+          <Link to="/" onClick={handleLogout}>
+            Logout
+          </Link>
         </li>
       )}
       {isAuthenticated && (
