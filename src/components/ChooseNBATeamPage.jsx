@@ -1,5 +1,4 @@
 import axios from "axios";
-import React from "react";
 import { useEffect, useState } from "react";
 import TeamItem from "./TeamItem.jsx";
 import "./ChooseNBATeamPage.css";
