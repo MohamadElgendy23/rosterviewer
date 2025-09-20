@@ -36,7 +36,21 @@ function MyTeamPage() {
     <div className="Team">
       <header className="header">
         <div className="favorites-container">
-          {favorites.map((favorite) => {})}
+          {favorites.map((favorite, index) => {
+            return (
+              <div key={index} className="favorite-item">
+                <p>
+                  First Name: {favorite.first_name}, Last Name:{" "}
+                  {favorite.last_name}
+                </p>
+                <p>Position: {favorite.position}</p>
+                <p>
+                  Height: {favorite.height}, Weight: {favorite.weight}
+                </p>
+                <p>Jersey #: {favorite.jersey_number}</p>
+              </div>
+            );
+          })}
         </div>
       </header>
     </div>

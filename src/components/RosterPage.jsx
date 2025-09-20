@@ -21,7 +21,7 @@ function RosterPage() {
     getData();
   }, []);
 
-  async function favoritePlayer(id) {
+  async function favoritePlayer(player) {
     const token = localStorage.getItem("token");
     if (!token) return;
 
@@ -32,7 +32,7 @@ function RosterPage() {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({ id }),
+        body: JSON.stringify({ player }),
       });
 
       const data = await res.json();
@@ -59,7 +59,7 @@ function RosterPage() {
                 <div key={index} className="roster-item">
                   <i
                     className="fa-solid fa-star"
-                    onClick={() => favoritePlayer(player.id)}
+                    onClick={() => favoritePlayer(player)}
                   ></i>
                   <p>
                     First Name: {player.first_name}, Last Name:{" "}
