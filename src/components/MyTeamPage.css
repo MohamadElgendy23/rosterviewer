@@ -10,3 +10,14 @@
   gap: 30px;
 }
 
+.favorite-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.favorite-item i {
+  margin-bottom: 10px;
+  cursor: pointer;
+}

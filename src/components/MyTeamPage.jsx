@@ -32,6 +32,34 @@ function MyTeamPage() {
 
     getFavorites();
   }, []);
+
+  async function unfavoritePlayer(player) {
+    const token = localStorage.getItem("token");
+    if (!token) return;
+
+    try {
+      const res = await fetch("http://localhost:3000/favorites/remove", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json", // 👈 needed to send JSON
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ item: player }), // 👈 send item in body
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        console.error("Failed to remove favorite:", data.error);
+        return;
+      }
+
+      setFavorites(data.favorites);
+    } catch (err) {
+      console.error("Error removing favorite:", err);
+    }
+  }
+
   return (
     <div className="Team">
       <header className="header">
@@ -39,6 +67,10 @@ function MyTeamPage() {
           {favorites.map((favorite, index) => {
             return (
               <div key={index} className="favorite-item">
+                <i
+                  className="fa-solid fa-star"
+                  onClick={() => unfavoritePlayer(favorite)}
+                ></i>
                 <p>
                   First Name: {favorite.first_name}, Last Name:{" "}
                   {favorite.last_name}

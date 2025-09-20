@@ -15,7 +15,6 @@ function RosterPage() {
         headers: { Authorization: "40829abe-4376-4b1c-b7f2-f1b7b66988d8" },
       });
       const data = response.data.data;
-      console.log(data);
       setRoster(data);
     }
     getData();
@@ -32,7 +31,7 @@ function RosterPage() {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({ player }),
+        body: JSON.stringify({ item: player }),
       });
 
       const data = await res.json();
