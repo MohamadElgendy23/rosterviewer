@@ -21,7 +21,33 @@ function RosterPage() {
     getData();
   }, []);
 
-  function favoritePlayer() {}
+  async function favoritePlayer(id) {
+    const token = localStorage.getItem("token");
+    if (!token) return;
+
+    try {
+      const res = await fetch("http://localhost:3000/favorites/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ id }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        console.error("Failed to add favorite:", data.error);
+        return;
+      }
+
+      console.log("Added favorite! Updated array:", data.favorites);
+      return data.favorites;
+    } catch (err) {
+      console.error("Error adding favorite:", err);
+    }
+  }
 
   return (
     <div className="Roster">
@@ -31,7 +57,10 @@ function RosterPage() {
             roster.map((player, index) => {
               return (
                 <div key={index} className="roster-item">
-                  <i className="fa-solid fa-star" onClick={favoritePlayer}></i>
+                  <i
+                    className="fa-solid fa-star"
+                    onClick={() => favoritePlayer(player.id)}
+                  ></i>
                   <p>
                     First Name: {player.first_name}, Last Name:{" "}
                     {player.last_name}
